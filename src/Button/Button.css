@@ -1,0 +1,10 @@
+input[type="button"]{
+cursor: pointer;
+width: 10em;
+height: 3.5em;
+padding: 10px 20px;
+font-size: 30px;
+color:white;
+border-color: #000000;
+background-color: #000000
+}

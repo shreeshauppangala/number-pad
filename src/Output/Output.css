@@ -1,0 +1,10 @@
+.Output {
+   display: flex;
+   cursor:none;
+   width:99%;
+   height: 4em;
+   border-color: #000000;
+   color: seashell;
+   font-size:xx-large;
+   background-color: #000000
+}
