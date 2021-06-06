@@ -1,14 +1,28 @@
 import React, { useState } from 'react'
-import Button from "../Button/Button"
+import Button from "./Button/Button"
 import Output from "../Output/Output";
 
 const NumberPad = () => {
 
     const [result, setResult] = useState('')
+    const [capitalise, setCapitalise] = useState(true)
+
     const backSpace = () => {
+        setResult(result.slice(0, -1))
     }
+
+    const hash = () => {
+        setCapitalise(!capitalise)
+    }
+
     const onClick = (value) => {
-        setResult(value)
+        if (capitalise) {
+            value = value.toLowerCase()
+        } else {
+            value = value.toUpperCase()
+        }
+        const upDatedValue = `${result}${value}`
+        setResult(upDatedValue)
     }
 
     return (
@@ -32,7 +46,7 @@ const NumberPad = () => {
             <div>
                 <Button onClick={onClick} label={['*']} />
                 <Button onClick={onClick} label={['0', '+']} />
-                <Button onClick={onClick} label={['#']} />
+                <Button onClick={hash} label={['#']} />
             </div>
             <div><Button onClick={backSpace} label={['⌫']} /></div>
         </div>
