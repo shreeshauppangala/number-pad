@@ -7,7 +7,7 @@ const Button = (props) => {
     const [timeOutflag, setTimeOutFlag] = useState(false)
     const nextItemRef = useRef(nextItem)
     nextItemRef.current = nextItem
-
+    let cusorPosition = nextItem + 1
 
 
     const onClick = () => {
@@ -16,13 +16,12 @@ const Button = (props) => {
             props.onClick(props.label[nextItemRef.current - 1])
             setNextItem(0)
         }, 1000);
+
         if (!timeOutflag && nextItemRef.current > 0) {
             clearTimeout(keyTimout)
         } else if (timeOutflag) {
             setTimeOutFlag(false)
         }
-
-        let cusorPosition = nextItem + 1
 
         if (props.label.length >= cusorPosition) {
             setNextItem(nextItem + 1)
@@ -33,6 +32,5 @@ const Button = (props) => {
 
     return <input onClick={onClick} type="button" value={props.label.join('').toString()} />
 }
+
 export default Button;
-
-

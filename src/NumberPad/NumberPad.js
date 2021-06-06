@@ -30,22 +30,22 @@ const NumberPad = () => {
             <Output label={result} />
             <div>
                 <Button onClick={onClick} label={['1']} />
-                <Button onClick={onClick} label={['2', 'A', 'B', 'C']} />
-                <Button onClick={onClick} label={['3', 'D', 'E', 'F']} />
+                <Button onClick={onClick} label={['A', 'B', 'C', '2']} />
+                <Button onClick={onClick} label={['D', 'E', 'F', '3']} />
             </div>
             <div>
-                <Button onClick={onClick} label={['4', 'G', 'H', 'I']} />
-                <Button onClick={onClick} label={['5', 'J', 'K', 'L']} />
-                <Button onClick={onClick} label={['6', 'M', 'N', 'O']} />
+                <Button onClick={onClick} label={['G', 'H', 'I', '4']} />
+                <Button onClick={onClick} label={['J', 'K', 'L', '5']} />
+                <Button onClick={onClick} label={['M', 'N', 'O', '6']} />
             </div>
             <div>
-                <Button onClick={onClick} label={['7', 'P', 'Q', 'R', 'S']} />
-                <Button onClick={onClick} label={['8', 'T', 'U', 'V']} />
-                <Button onClick={onClick} label={['9', 'W', 'X', 'Y', 'Z']} />
+                <Button onClick={onClick} label={['P', 'Q', 'R', 'S', '7']} />
+                <Button onClick={onClick} label={['T', 'U', 'V', '8']} />
+                <Button onClick={onClick} label={['W', 'X', 'Y', 'Z', '9']} />
             </div>
             <div>
                 <Button onClick={onClick} label={['*']} />
-                <Button onClick={onClick} label={['0', '+']} />
+                <Button onClick={onClick} label={['+', '0']} />
                 <Button onClick={hash} label={['#']} />
             </div>
             <div><Button onClick={backSpace} label={['⌫']} /></div>
