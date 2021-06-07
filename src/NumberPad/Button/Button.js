@@ -6,11 +6,12 @@ const Button = (props) => {
     let [nextItem, setNextItem] = useState(0)
     const [timeOutflag, setTimeOutFlag] = useState(false)
     const nextItemRef = useRef(nextItem)
+    let currentPosition = nextItem + 1
     nextItemRef.current = nextItem
-    let cusorPosition = nextItem + 1
 
 
     const onClick = () => {
+
         const keyTimout = setTimeout(() => {
             setTimeOutFlag(true);
             props.onClick(props.label[nextItemRef.current - 1])
@@ -23,9 +24,9 @@ const Button = (props) => {
             setTimeOutFlag(false)
         }
 
-        if (props.label.length >= cusorPosition) {
+        if (props.label.length >= currentPosition) {
             setNextItem(nextItem + 1)
-        } else if (cusorPosition === props.label.length) {
+        } else if (currentPosition === props.label.length) {
             setNextItem(0)
         }
     }
