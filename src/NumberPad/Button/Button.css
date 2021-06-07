@@ -4,7 +4,13 @@ width: 10em;
 height: 3.5em;
 padding: 10px 20px;
 font-size: 30px;
-color:white;
-border-color: #000000;
-background-color: #000000
+border:none;
+  background: -webkit-linear-gradient(rgb(0, 194, 253), rgb(248, 141, 2));
+  -webkit-background-clip:text;
+  background-clip:text;
+  -webkit-text-fill-color: transparent;
+}
+
+input[type="button"]:active{
+    transform: scale(0.9);
 }

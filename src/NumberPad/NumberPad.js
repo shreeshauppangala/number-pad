@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import Button from "./Button/Button"
-import Output from "../Output/Output";
+import Output from "../Display/Display";
 
 const NumberPad = () => {
 
@@ -11,7 +11,7 @@ const NumberPad = () => {
         setResult(result.slice(0, -1))
     }
 
-    const hash = () => {
+    const capital = () => {
         setCapitalise(!capitalise)
     }
 
@@ -29,26 +29,30 @@ const NumberPad = () => {
         <div>
             <Output label={result} />
             <div>
-                <Button onClick={onClick} label={['1']} />
-                <Button onClick={onClick} label={['A', 'B', 'C', '2']} />
-                <Button onClick={onClick} label={['D', 'E', 'F', '3']} />
+                <Button onClick={onClick} label={['𝟏', '.', ',', '?']} />
+                <Button onClick={onClick} label={['𝟐', 'a', 'b', 'c']} />
+                <Button onClick={onClick} label={['𝟑', 'd', 'e', 'f']} />
             </div>
             <div>
-                <Button onClick={onClick} label={['G', 'H', 'I', '4']} />
-                <Button onClick={onClick} label={['J', 'K', 'L', '5']} />
-                <Button onClick={onClick} label={['M', 'N', 'O', '6']} />
+                <Button onClick={onClick} label={['𝟒', 'g', 'h', 'i']} />
+                <Button onClick={onClick} label={['𝟓', 'j', 'k', 'l']} />
+                <Button onClick={onClick} label={['𝟔', 'm', 'n', 'o']} />
             </div>
             <div>
-                <Button onClick={onClick} label={['P', 'Q', 'R', 'S', '7']} />
-                <Button onClick={onClick} label={['T', 'U', 'V', '8']} />
-                <Button onClick={onClick} label={['W', 'X', 'Y', 'Z', '9']} />
+                <Button onClick={onClick} label={['𝟕', 'p', 'q', 'r', 's']} />
+                <Button onClick={onClick} label={['𝟖', 't', 'u', 'v']} />
+                <Button onClick={onClick} label={['𝟗', 'w', 'x', 'y', 'z']} />
             </div>
             <div>
                 <Button onClick={onClick} label={['*']} />
-                <Button onClick={onClick} label={['+', '0']} />
-                <Button onClick={hash} label={['#']} />
+                <Button onClick={onClick} label={['𝟎', '+']} />
+                <Button onClick={onClick} label={['#']} />
             </div>
-            <div><Button onClick={backSpace} label={['⌫']} /></div>
+            <div>
+                <Button onClick={backSpace} label={['⌫']} />
+                <Button onClick={onClick} label={[' ','␣']} />
+                <Button onClick={capital} label={['⇧']} />
+            </div>
         </div>
     )
 }

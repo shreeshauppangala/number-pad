@@ -15,7 +15,7 @@ const Button = (props) => {
             setTimeOutFlag(true);
             props.onClick(props.label[nextItemRef.current - 1])
             setNextItem(0)
-        }, 1000);
+        }, 700);
 
         if (!timeOutflag && nextItemRef.current > 0) {
             clearTimeout(keyTimout)

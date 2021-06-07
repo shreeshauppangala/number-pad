@@ -1,0 +1,12 @@
+.Display {
+   display: flex;
+   cursor:none;
+   width:99%;
+   height: 4em;
+   border:none;
+   font-size:xx-large;
+    background: -webkit-linear-gradient(rgb(49, 245, 0), rgb(245, 6, 38));
+  -webkit-background-clip: text;
+  background-clip:text;
+  -webkit-text-fill-color: transparent;
+}
