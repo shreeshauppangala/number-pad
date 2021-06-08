@@ -1,8 +1,8 @@
 .Display {
-   display: flex;
+  margin: 0,0.25em;
    cursor:none;
-   width:99%;
-   height: 4em;
+   width:98%;
+   height:4em;
    border:none;
    font-size:xx-large;
     background: -webkit-linear-gradient(rgb(49, 245, 0), rgb(245, 6, 38));

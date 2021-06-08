@@ -2,8 +2,7 @@ input[type="button"]{
 cursor: pointer;
 width: 10em;
 height: 3.5em;
-padding: 10px 20px;
-font-size: 30px;
+font-size: 1.9em;
 border:none;
   background: -webkit-linear-gradient(rgb(0, 194, 253), rgb(248, 141, 2));
   -webkit-background-clip:text;
