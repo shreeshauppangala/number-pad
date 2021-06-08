@@ -29,7 +29,7 @@ const NumberPad = () => {
         <div>
             <Output label={result} />
             <div>
-                <Button onClick={onClick} label={['𝟏', '.', ',', '?']} />
+                <Button onClick={onClick} label={['𝟏', '.', ',', '?','!']} />
                 <Button onClick={onClick} label={['𝟐', 'a', 'b', 'c']} />
                 <Button onClick={onClick} label={['𝟑', 'd', 'e', 'f']} />
             </div>
