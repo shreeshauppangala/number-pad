@@ -1,7 +1,7 @@
 import React from 'react'
 import NumberPad from "./NumberPad/NumberPad";
 
-function App() {
+const App = () => {
 
   return <div style={{textAlign:'center'}}><NumberPad /></div>
 }

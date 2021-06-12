@@ -5,8 +5,12 @@ const Button = (props) => {
 
     let [nextItem, setNextItem] = useState(0)
     const [timeOutflag, setTimeOutFlag] = useState(false)
+
     const nextItemRef = useRef(nextItem)
-    let currentPosition = nextItem + 1
+
+    let content = props.label.concat(props.digit)
+
+    let caretPosition = nextItem + 1
     nextItemRef.current = nextItem
 
 
@@ -16,7 +20,7 @@ const Button = (props) => {
             setTimeOutFlag(true);
             props.onClick(props.label[nextItemRef.current - 1])
             setNextItem(0)
-        }, 700);
+        }, 500);
 
         if (!timeOutflag && nextItemRef.current > 0) {
             clearTimeout(keyTimout)
@@ -24,14 +28,14 @@ const Button = (props) => {
             setTimeOutFlag(false)
         }
 
-        if (props.label.length >= currentPosition) {
+        if (props.label.length >= caretPosition) {
             setNextItem(nextItem + 1)
-        } else if (currentPosition === props.label.length) {
+        } else if (caretPosition === props.label.length) {
             setNextItem(0)
         }
     }
 
-    return <input onClick={onClick} type="button" value={props.label.join('').toString()} />
+    return <input onClick={onClick} type="button" value={content.join('').toString()} />
 }
 
 export default Button;

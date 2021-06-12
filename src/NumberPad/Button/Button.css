@@ -1,10 +1,10 @@
 input[type="button"]{
 cursor: pointer;
 width: 10em;
-height: 3.5em;
+height: 3.4em;
 font-size: 1.9em;
 border:none;
-  background: -webkit-linear-gradient(rgb(0, 194, 253), rgb(248, 141, 2));
+  background: -webkit-linear-gradient( #f80202,#0043fdef);
   -webkit-background-clip:text;
   background-clip:text;
   -webkit-text-fill-color: transparent;
