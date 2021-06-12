@@ -54,7 +54,7 @@ const NumberPad = () => {
     return (
         <div>
             <Output content={result} />
-            <button {...numbers} digit={[1]}>Press me</button>
+            {/* <button {...numbers} digit={[1]}>Press me</button> */}
             <div className='btn'>
                 <Button onClick={onClick} /*onKeyPress={97}*/ {...numbers} digit={[1]} label={['.', ',', '?', '!']} />
                 <Button onClick={onClick} /*onKeyPress={98}*/ {...numbers} digit={[2]} label={['a', 'b', 'c']} />
