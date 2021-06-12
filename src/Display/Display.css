@@ -1,7 +1,7 @@
 .Display {
-  margin: 0.25em;
   cursor:none;
-   width:98%;
+  margin-top: 0.2em;
+   width:99.2%;
    border:none;
    font-size:xxx-large;
     background: -webkit-linear-gradient(#ff0022,#33ff00);

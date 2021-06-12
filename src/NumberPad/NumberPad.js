@@ -16,7 +16,7 @@ const NumberPad = () => {
 
     // }, []);
 
-    const numbers = useLongPress( () => /*enabled ? callback : null,*/ {
+    const numbers = useLongPress(() => /*enabled ? callback : null,*/ {
         console.log("Long pressed!")
         // threshold: 1000,
     });
@@ -27,7 +27,7 @@ const NumberPad = () => {
     // }
 
     const backSpace = () => {
-        setResult(result.slice(0,-1))
+        setResult(result.slice(0, -1))
         // selectionStart
     }
 
