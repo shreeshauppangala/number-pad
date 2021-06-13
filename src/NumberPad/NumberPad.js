@@ -9,9 +9,9 @@ const NumberPad = () => {
     const [capitalise, setCapitalise] = useState(true)
 
 
-    // window.addEventListener('keyDown', (event)=>{
-    //     console.log(event.getModifierState && event.getModifierState('CapsLock'))
-    // })
+    window.addEventListener('keydown', (event) => {
+        setCapitalise(event.getModifierState && event.getModifierState('CapsLock'))
+    } )
 
     const bkSpace = () => setResult(result.slice(0, -1))
 
@@ -27,6 +27,7 @@ const NumberPad = () => {
         if (e.keyCode === 20) {
             setCapitalise(!capitalise)
         }
+        console.log(e)
     }
 
     const onChange = (value) => setResult(value.target.value)
