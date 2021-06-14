@@ -7,7 +7,15 @@ const Display = (props) => {
 
     const onBlur = () => inputRef.current.focus()
 
-    return <input className='Display' type="text" autoFocus value={props.content} onChange={props.onChange} ref={inputRef} onBlur={onBlur} />
+    return <input
+        autoFocus
+        className='Display'
+        type="text"
+        value={props.content}
+        onChange={props.onChange}
+        ref={inputRef}
+        onBlur={onBlur}
+    />
 }
 
 export default Display;

@@ -1,4 +1,4 @@
-import React, { useState} from 'react'
+import React, { useState } from 'react'
 import Button from "./Button/Button"
 import Display from "../Display/Display"
 import './NumberPad.css'
@@ -8,27 +8,19 @@ const NumberPad = () => {
     const [result, setResult] = useState('')
     const [capitalise, setCapitalise] = useState(true)
 
-
-    window.addEventListener('keydown', (event) => {
-        setCapitalise(event.getModifierState && event.getModifierState('CapsLock'))
-    } )
-
     const bkSpace = () => setResult(result.slice(0, -1))
-
     const backSpace = (e) => {
         if (e.keyCode === 8) {
             setResult(result.slice(0, -1))
         }
     }
 
+
+    window.addEventListener('keydown', (event) => {
+        setCapitalise(event.getModifierState && event.getModifierState('CapsLock'))
+    })
     const capital = () => setCapitalise(!capitalise)
 
-    const capsLock = (e) => {
-        if (e.keyCode === 20) {
-            setCapitalise(!capitalise)
-        }
-        console.log(e)
-    }
 
     const onChange = (value) => setResult(value.target.value)
 
@@ -68,7 +60,7 @@ const NumberPad = () => {
             <div className='btn'>
                 <Button onClick={bkSpace} onKeyDown={backSpace} label={['⌫']} />
                 <Button onClick={onClick} label={[' ', '␣']} />
-                <Button onClick={capital} onKeyDown={capsLock} label={['⇧']} />
+                <Button onClick={capital} label={['⇧']} />
             </div>
         </div>
     )

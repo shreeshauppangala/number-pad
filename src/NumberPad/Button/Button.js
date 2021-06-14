@@ -1,4 +1,4 @@
-import React, { useState, useRef,useCallback} from 'react';
+import React, { useState, useRef, useCallback } from 'react';
 import { useLongPress } from 'use-long-press'
 import './Button.css'
 
@@ -6,53 +6,49 @@ const Button = (props) => {
 
 
     let [nextItem, setNextItem] = useState(0)
-    const [timeOutflag, setTimeOutFlag] = useState(false)
+    const [timeOut, settimeOut] = useState(false)
     const [startClick, setStartClick] = useState(false)
-    const [longPressStartedFlag, setLongPressStartedFlag] = useState(false)
+    const [longPressStarted, setlongPressStarted] = useState(false)
 
     const nextItemRef = useRef(nextItem)
     let currentPosition = nextItem + 1
     nextItemRef.current = nextItem
 
     let content = props.label
-
     if (props.digit) {
         content = [...props.digit, ...content]
     }
 
 
-     const enabled = true
-
-    const callback = useCallback(event => {
-    }, []);
-
-
-    const onStart = (event) => {
+    const onStart = () => {
         setStartClick(true)
-        setLongPressStartedFlag(true)
+        setlongPressStarted(true)
     }
 
-    const onFinish = (event) => {
-        setLongPressStartedFlag(false)
+    const onFinish = () => {
+        setlongPressStarted(false)
         onClickSendToParent(props.digit[0])
     }
 
-    const onCancel = (event) => {
+    const onCancel = () => {
         setStartClick(false)
-        setLongPressStartedFlag(false)
+        setlongPressStarted(false)
     }
 
+    const enabled = true
+    const callback = useCallback(event => {
+    }, []);
     const numbers = useLongPress(enabled ? callback : null, {
         onStart: event => onStart(event),
         onFinish: event => onFinish(event),
         onCancel: event => onCancel(event),
     });
 
-    const onClickSendToParent = (val) => {
-        if (startClick && longPressStartedFlag){
-            props.onClick(val)
-        }else if(!startClick) {
-            props.onClick(val)
+    const onClickSendToParent = (value) => {
+        if (startClick && longPressStarted) {
+            props.onClick(value)
+        } else if (!startClick) {
+            props.onClick(value)
         }
     }
 
@@ -60,15 +56,15 @@ const Button = (props) => {
     const onClick = () => {
 
         const keyTimout = setTimeout(() => {
-            setTimeOutFlag(true);
+            settimeOut(true);
             onClickSendToParent(props.label[nextItemRef.current - 1])
             setNextItem(0)
         }, 500);
 
-        if (!timeOutflag && nextItemRef.current > 0) {
+        if (!timeOut && nextItemRef.current > 0) {
             clearTimeout(keyTimout)
-        } else if (timeOutflag) {
-            setTimeOutFlag(false)
+        } else if (timeOut) {
+            settimeOut(false)
         }
 
         if (props.label.length >= currentPosition) {
