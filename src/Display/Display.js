@@ -4,7 +4,6 @@ import './Display.css'
 const Display = (props) => {
 
     const inputRef = useRef()
-
     const onBlur = () => inputRef.current.focus()
 
     return <input
