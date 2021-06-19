@@ -35,9 +35,8 @@ const Button = (props) => {
         setlongPressStarted(false)
     }
 
+    const callback = useCallback(() =>{}, []);
     const enabled = true
-    const callback = useCallback(event => {
-    }, []);
     const numbers = useLongPress(enabled ? callback : null, {
         onStart: event => onStart(event),
         onFinish: event => onFinish(event),
