@@ -6,7 +6,7 @@ const Button = (props) => {
 
 
     let [nextItem, setNextItem] = useState(0)
-    const [timeOut, settimeOut] = useState(false)
+    const [timeOver, setTimeOver] = useState(false)
     const [startClick, setStartClick] = useState(false)
     const [longPressStarted, setlongPressStarted] = useState(false)
 
@@ -27,7 +27,7 @@ const Button = (props) => {
 
     const onFinish = () => {
         setlongPressStarted(false)
-        onClickSendToParent(props.digit[0])
+        onClickSendToNumberPad(props.digit[0])
     }
 
     const onCancel = () => {
@@ -43,7 +43,7 @@ const Button = (props) => {
         onCancel: event => onCancel(event),
     });
 
-    const onClickSendToParent = (value) => {
+    const onClickSendToNumberPad = (value) => {
         if (startClick && longPressStarted) {
             props.onClick(value)
         } else if (!startClick) {
@@ -55,15 +55,15 @@ const Button = (props) => {
     const onClick = () => {
 
         const keyTimout = setTimeout(() => {
-            settimeOut(true);
-            onClickSendToParent(props.label[nextItemRef.current - 1])
+            setTimeOver(true);
+            onClickSendToNumberPad(props.label[nextItemRef.current - 1])
             setNextItem(0)
-        }, 500);
+        }, 600);
 
-        if (!timeOut && nextItemRef.current > 0) {
+        if (!timeOver && nextItemRef.current > 0) {
             clearTimeout(keyTimout)
-        } else if (timeOut) {
-            settimeOut(false)
+        } else if (timeOver) {
+            setTimeOver(false)
         }
 
         if (props.label.length >= currentPosition) {

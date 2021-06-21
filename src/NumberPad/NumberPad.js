@@ -16,9 +16,7 @@ const NumberPad = () => {
     }
 
 
-    window.addEventListener('keydown', (event) => {
-        setCapitalise(event.getModifierState && event.getModifierState('CapsLock'))
-    })
+    window.addEventListener('keydown', (event) => setCapitalise(event.getModifierState && event.getModifierState('CapsLock')))
     const capital = () => setCapitalise(!capitalise)
 
 
@@ -37,6 +35,7 @@ const NumberPad = () => {
     return (
         <div>
             <Display content={result} onChange={onChange} />
+
             <div className='btn'>
                 <Button onClick={onClick} digit={['1']} label={['.', ',']} />
                 <Button onClick={onClick} digit={['2']} label={['a', 'b', 'c']} />
